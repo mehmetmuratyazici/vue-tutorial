@@ -1,40 +1,6 @@
 {
   "userInfo": [
-    {
-      "name": "mmy",
-      "surname": "my",
-      "username": "mmy",
-      "password": "47a2aaae62aa158e1bb1ab6cd70f5ff5b4906e87",
-      "id": 1
-    },
-    {
-      "name": "b",
-      "surname": "b",
-      "username": "b",
-      "password": "3bca2681de645f28419f4d75b32da8f365c55b9f",
-      "id": 2
-    },
-    {
-      "name": "f",
-      "surname": "f",
-      "username": "f",
-      "password": "335e9f4666cee17e1814c5d6ca56358c24a2c3d5",
-      "id": 3
-    },
-    {
-      "name": "z",
-      "surname": "z",
-      "username": "z",
-      "password": "6c894dfffd1f7eae8986376d0109c088beb81d8a",
-      "id": 4
-    },
-    {
-      "name": "c",
-      "surname": "c",
-      "username": "c",
-      "password": "5edd661f97eac661629bc7cb008f8e17a3bbab97",
-      "id": 5
-    },
+    
     {
       "name": "r",
       "surname": "r",
