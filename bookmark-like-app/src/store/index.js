@@ -6,46 +6,11 @@ var ls = new SecureLS({ isCompression: false });
 
 const store = createStore({
     state: {
-        appName : "Social BookMark",
+        appName : "BookMark",
         userLogin : null,
         secretKey : "pargommy",
-        bookmarkList : [
-            {
-                id : 1,
-                content : "Bookmark 1",
-                username : "mmy",
-                liked : false,
-                fav : false,
-            },
-            {
-                id : 2,
-                content : "Bookmark 2",
-                username : "mmy",
-                liked : false,
-                fav : false,
-            },
-            {
-                id : 3,
-                content : "Bookmark 3",
-                username : "mmy",
-                liked : false,
-                fav : false,
-            },
-            {
-                id : 4,
-                content : "Bookmark 4",
-                username : "mmy",
-                liked : false,
-                fav : false,
-            },
-            {
-                id : 5,
-                content : "Bookmark 5",
-                username : "mmy",
-                liked : true,
-                fav : false,
-            }
-        ]
+        categoriesList : [],
+        bookmarkList : [],
     },
     mutations : {
         setUser(state, loginInfo){
@@ -58,6 +23,7 @@ const store = createStore({
     getters :{
         _isAuthenticated : state => state.userLogin != null,
         _getBookmarkList : state => state.bookmarkList,//.filter,
+        _getCategoryList : state => state.categoriesList,
         _getUserInfo(state) {
             const user = state.userLogin
             // console.log("_getUserInfo") // iki kere geliyor her işlemde neden olduğuna bakmak lazım

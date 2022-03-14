@@ -15,7 +15,13 @@ const routes = [
         name : "LoginPage",
         path: "/login",
         component : import("@/views/LoginPage")
-    }
+    },
+    {
+        name : "NewBookmarkPage",
+        path: "/new",
+        component : import("@/components/home/NewBookmarkPage")
+    },
+    
 ]
 
 const router = createRouter({

@@ -1,5 +1,4 @@
 <template>
-  <h2 class="text-white">Bookmark Items</h2>
   <div
     class="
       container

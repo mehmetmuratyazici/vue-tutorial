@@ -1,5 +1,4 @@
 <template>
-  
   <div
     class="offcanvas offcanvas-start"
     tabindex="-1"
@@ -16,11 +15,35 @@
       ></button>
     </div>
     <div class="offcanvas-body">
-      <ul class="list-group" >
-          <li class="list-group-item d-felx justify-content-start"><router-link class="text-decoration-none text-dark"  :to="{}">Action</router-link></li>
-          <li class="list-group-item d-felx justify-content-start"><router-link  class="text-decoration-none text-dark" :to="{}">Another action</router-link></li>
-          <li class="list-group-item d-felx justify-content-start"><router-link class="text-decoration-none text-dark"  :to="{}">Something else here</router-link></li>
+      <ul class="list-group">
+        <li
+          data-bs-dismiss="offcanvas"
+          v-for="item in $store.getters._getCategoryList"
+          :key="item.id"
+          class="list-group-item d-felx justify-content-start sidebar-hover fs-6"
+          @click="$emit('change-category', item.id)"
+        >
+          {{ item.categoryName }}
+        </li>
       </ul>
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  created() {},
+  mounted() {},
+  methods: {},
+};
+</script>
+
+<style>
+.sidebar-hover{
+  cursor: pointer;
+}
+.sidebar-hover:hover{
+  background-color: rgb(68, 68, 68);
+  color: white;
+}
+</style>

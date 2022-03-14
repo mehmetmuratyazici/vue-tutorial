@@ -19,8 +19,10 @@
         />
 
         <ul class="dropdown-menu">
-          <li><a class="dropdown-item" href="#">acount</a></li>
-          <li><a class="dropdown-item" href="#">farovites</a></li>
+          <li>
+            <router-link class="dropdown-item" :to="{ name : 'NewBookmarkPage'}">New Bookmark</router-link>
+          </li>
+          <li><a class="dropdown-item" href="#">Farovites</a></li>
           <!-- <li><hr class="dropdown-divider" /></li> -->
           <li><a @click="logOut" class="dropdown-item" href="#">Log Out</a></li>
         </ul>
