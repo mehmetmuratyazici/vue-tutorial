@@ -6,11 +6,14 @@ var ls = new SecureLS({ isCompression: false });
 
 const store = createStore({
     state: {
-        appName : "BookMark",
+        appname : "BookMark",
         userLogin : null,
         secretKey : "pargommy",
         categoriesList : [],
         bookmarkList : [],
+        hideMenuSideBar: true,
+        socketAddress: "http://localhost:1967",
+        showNewBookmark: false,
     },
     mutations : {
         setUser(state, loginInfo){
@@ -18,12 +21,29 @@ const store = createStore({
         },
         logoutUser(state) {
             state.userLogin = null
+        },
+        setHideMenuBar(state, val){
+            state.hideMenuSideBar = val
+        },
+        addLike(state, arrLike){
+            state.userLogin.likes = arrLike
+        },
+        addFav(state, arrFav){
+            state.userLogin.favs = arrFav
+        },
+        addBookmark(state, bookmark){
+            state.bookmarkList.push(bookmark)
+        },
+        showNewBookmark(state, val){
+            state.showNewBookmark = val;
         }
     },
     getters :{
         _isAuthenticated : state => state.userLogin != null,
         _getBookmarkList : state => state.bookmarkList,//.filter,
         _getCategoryList : state => state.categoriesList,
+        _userLikes : state => state.userLogin?.likes || [],
+        _userFav : state => state.userLogin?.favs || [],
         _getUserInfo(state) {
             const user = state.userLogin
             // console.log("_getUserInfo") // iki kere geliyor her işlemde neden olduğuna bakmak lazım
@@ -31,6 +51,8 @@ const store = createStore({
             return user
         },
         _getActiveUser : state => state.userLogin?.username,
+        _getSocketAddress: state => state.socketAddress,
+        _showNewBookmark: state => state.showNewBookmark,
     },
     plugins: [
         createPersistedState({

@@ -70,10 +70,9 @@ export default {
 
       this.$appAxios
         .get(
-          `/userInfo?username=${this.userLoginData.username}&password=${password}`
+          `/users?username=${this.userLoginData.username}&password=${password}`
         )
         .then((res) => {
-          console.log(res);
           if (
             res.status == 200 &&
             res.data[0]?.username == this.userLoginData.username
@@ -86,7 +85,7 @@ export default {
           }
         })
         .catch(e => console.log(e));
-      console.log("userLoginData >> ", this.userLoginData, password);
+      //console.log("userLoginData >> ", this.userLoginData, password);
     },
   },
 };

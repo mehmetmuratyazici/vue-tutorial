@@ -4,7 +4,7 @@
       container
       flex-wrap
       d-flex
-      justify-content-start
+      justify-content-center
       align-items-center
     "
   >

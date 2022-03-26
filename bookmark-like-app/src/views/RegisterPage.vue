@@ -114,7 +114,7 @@ export default {
         
         this
         .$appAxios
-        .post("/userInfo", tmpData)
+        .post("/users", tmpData)
         .then(res => {
           console.log(res.data)
           if(res.status == 201){
